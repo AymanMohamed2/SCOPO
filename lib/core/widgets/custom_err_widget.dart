@@ -8,6 +8,8 @@ class CustomErrorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Icon(
           Icons.error,
@@ -16,7 +18,10 @@ class CustomErrorWidget extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Text(errMessage),
+        Text(
+          errMessage,
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }
