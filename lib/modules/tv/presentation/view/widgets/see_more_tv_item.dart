@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:task_2/core/theme/app_colors.dart';
 import 'package:task_2/core/widgets/movie_image_item.dart';
-import 'package:task_2/core/widgets/see_more_info.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 import 'package:task_2/modules/movies/presentation/view/details_view.dart';
+import 'package:task_2/modules/tv/domain/entities/tv_entity.dart';
+import 'package:task_2/modules/tv/presentation/view/widgets/see_mote_tv_item_info.dart';
 
-class SeeMoreItem extends StatelessWidget {
-  const SeeMoreItem({
+class SeeMoreTvItem extends StatelessWidget {
+  const SeeMoreTvItem({
     super.key,
-    required this.movie,
+    required this.tv,
   });
-  final MoviesEntity movie;
+  final TvEntity tv;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailsView.routeName, arguments: movie);
+        Navigator.pushNamed(context, DetailsView.routeName, arguments: tv);
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
@@ -31,7 +31,7 @@ class SeeMoreItem extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: MovieImageItem(
-                    image: movie.image,
+                    image: tv.image,
                   ),
                 )),
             const SizedBox(
@@ -39,8 +39,8 @@ class SeeMoreItem extends StatelessWidget {
             ),
             Expanded(
                 flex: 5,
-                child: SeeMoreItemInfo(
-                  movie: movie,
+                child: SeeMoteTvItemInfo(
+                  tv: tv,
                 )),
           ],
         ),

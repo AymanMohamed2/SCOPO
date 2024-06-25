@@ -15,7 +15,9 @@ class SeeMorePopularBlocBuilder extends StatelessWidget {
       if (state is GetPopularSuccess ||
           state is GetPopularPaginationFailure ||
           state is GetPopularPaginationLoading) {
-        return const SeeMoreMoviePopularListView();
+        return SeeMoreMoviePopularListView(
+          movies: BlocProvider.of<GetPopularCubit>(context).movies,
+        );
       } else if (state is GetPopularFailure) {
         return CustomErrorWidget(errMessage: state.errMessage);
       } else {

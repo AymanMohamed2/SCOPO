@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_2/modules/movies/presentation/view/widgets/see_more_movie_item.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
-import 'package:task_2/modules/movies/presentation/view_model/get_popular_cubit/get_popular_cubit.dart';
+import 'package:task_2/modules/tv/domain/entities/tv_entity.dart';
+import 'package:task_2/modules/tv/presentation/view/widgets/see_more_tv_item.dart';
+import 'package:task_2/modules/tv/presentation/view_model/get_tv_top_rated.dart/get_tv_top_rated_cubit.dart';
 
-class SeeMoreMoviePopularListView extends StatefulWidget {
-  const SeeMoreMoviePopularListView({super.key, required this.movies});
-  final List<MoviesEntity> movies;
+class TvSeeMoreTopRatedListView extends StatefulWidget {
+  const TvSeeMoreTopRatedListView({super.key, required this.tvs});
+  final List<TvEntity> tvs;
 
   @override
-  State<SeeMoreMoviePopularListView> createState() =>
-      _SeeMoreMoviePopularListViewState();
+  State<TvSeeMoreTopRatedListView> createState() =>
+      _TvSeeMoreTopRatedListViewState();
 }
 
-class _SeeMoreMoviePopularListViewState
-    extends State<SeeMoreMoviePopularListView> {
+class _TvSeeMoreTopRatedListViewState extends State<TvSeeMoreTopRatedListView> {
   late final ScrollController _scrollController;
 
   var isLoading = false;
@@ -31,9 +30,11 @@ class _SeeMoreMoviePopularListViewState
     if (currentPositions >= 0.7 * maxScrollLength) {
       if (!isLoading) {
         isLoading = true;
-        await BlocProvider.of<GetPopularCubit>(context).getPopularMovies(
-            pageNumber: ++BlocProvider.of<GetPopularCubit>(context).nextPage);
+        await BlocProvider.of<GetTvTopRatedCubit>(context).getTopRatedTv(
+            pageNumber:
+                ++BlocProvider.of<GetTvTopRatedCubit>(context).nextPage);
         isLoading = false;
+        setState(() {});
       }
     }
   }
@@ -48,10 +49,10 @@ class _SeeMoreMoviePopularListViewState
   Widget build(BuildContext context) {
     return ListView.builder(
         controller: _scrollController,
-        itemCount: widget.movies.length,
+        itemCount: widget.tvs.length,
         itemBuilder: (context, index) {
-          return SeeMoreItem(
-            movie: widget.movies[index],
+          return SeeMoreTvItem(
+            tv: widget.tvs[index],
           );
         });
   }

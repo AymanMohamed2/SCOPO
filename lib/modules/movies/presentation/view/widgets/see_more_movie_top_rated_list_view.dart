@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_2/core/widgets/see_more_item.dart';
+import 'package:task_2/modules/movies/presentation/view/widgets/see_more_movie_item.dart';
+import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 import 'package:task_2/modules/movies/presentation/view_model/get_top_rated_cubit/get_top_rated_cubit.dart';
 
 class SeeMoreMovieTopRatedListView extends StatefulWidget {
-  const SeeMoreMovieTopRatedListView({super.key});
+  const SeeMoreMovieTopRatedListView({super.key, required this.movies});
+  final List<MoviesEntity> movies;
 
   @override
   State<SeeMoreMovieTopRatedListView> createState() =>
@@ -33,7 +35,6 @@ class _SeeMoreMovieTopRatedListViewState
             pageNumber: ++BlocProvider.of<GetTopRatedCubit>(context).nextPage);
         isLoading = false;
       }
-      setState(() {});
     }
   }
 

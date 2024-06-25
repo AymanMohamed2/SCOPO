@@ -5,6 +5,7 @@ import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.
 import 'package:task_2/modules/movies/presentation/view/details_view.dart';
 import 'package:task_2/modules/movies/presentation/view/movie_view.dart';
 import 'package:task_2/modules/movies/presentation/view/see_more_view.dart';
+import 'package:task_2/modules/tv/presentation/view/tv_see_more_view.dart';
 
 import '../../modules/splash/presentation/view/splash_view.dart';
 
@@ -27,6 +28,11 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (context) => DetailsView(
                   movie: settings.arguments as MoviesEntity,
+                ));
+      case TvSeeMoreView.routeName:
+        return MaterialPageRoute(
+            builder: (context) => TvSeeMoreView(
+                  arguments: settings.arguments as SeeMoreArguments,
                 ));
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold());

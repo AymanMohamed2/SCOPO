@@ -15,7 +15,9 @@ class SeeMoreTopRatedBlocBuilder extends StatelessWidget {
       if (state is GetTopRatedSuccess ||
           state is GetTopRatedPaginationFailure ||
           state is GetTopRatedPaginationLoading) {
-        return const SeeMoreMovieTopRatedListView();
+        return SeeMoreMovieTopRatedListView(
+          movies: BlocProvider.of<GetTopRatedCubit>(context).movies,
+        );
       } else if (state is GetTopRatedFailure) {
         return CustomErrorWidget(errMessage: state.errMessage);
       } else {
