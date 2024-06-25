@@ -9,4 +9,5 @@ abstract class BaseMoviesRepository {
       {int pageNumber = 1});
   Future<Either<Failure, List<MoviesEntity>>> getTopRatedMovies(
       {int pageNumber = 1});
+  Future<Either<Failure, List<MoviesEntity>>> getMoreLikeThis(String movieName);
 }

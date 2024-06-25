@@ -5,10 +5,10 @@ import 'package:task_2/core/networking/queries.dart';
 import '../../domain/entities/now_playing_movies_entity.dart';
 import '../models/movies_model/movies_model.dart';
 
-class RemoteDataSource {
+class MovieRemoteDataSource {
   final ApiService apiService;
 
-  RemoteDataSource(this.apiService);
+  MovieRemoteDataSource(this.apiService);
 
   Future<List<MoviesEntity>> getNowPlayingMovies({int pageNumber = 1}) async {
     final response = await apiService.get(
@@ -24,7 +24,7 @@ class RemoteDataSource {
         endPoint: EndPoints.moviePopular +
             Queries.getPopularQuery +
             pageNumber.toString());
-    print(response['page']);
+
     return MovieModel.fromJson(response).results;
   }
 
@@ -33,6 +33,14 @@ class RemoteDataSource {
         endPoint: EndPoints.movieTopRated +
             Queries.getTopRatedQuery +
             pageNumber.toString());
+    return MovieModel.fromJson(response).results;
+  }
+
+  Future<List<MoviesEntity>> getMoreLikeThis(
+      {int pageNumber = 1, required String movieName}) async {
+    final response = await apiService.get(
+        endPoint:
+            EndPoints.moreLikeThis + Queries.moreLikeThisQuery + movieName);
     return MovieModel.fromJson(response).results;
   }
 }

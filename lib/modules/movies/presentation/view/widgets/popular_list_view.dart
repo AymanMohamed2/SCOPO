@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_2/core/widgets/movie_image_item.dart';
+import 'package:task_2/modules/movies/presentation/view/details_view.dart';
 import 'package:task_2/modules/movies/presentation/view_model/get_popular_cubit/get_popular_cubit.dart';
 
 import '../../../domain/entities/now_playing_movies_entity.dart';
@@ -53,8 +54,14 @@ class _PopularListViewState extends State<PopularListView> {
         itemCount: widget.movies.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 5),
-          child: MovieImageItem(
-            image: widget.movies[index].image,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, DetailsView.routeName,
+                  arguments: widget.movies[index]);
+            },
+            child: MovieImageItem(
+              image: widget.movies[index].image,
+            ),
           ),
         ),
       ),

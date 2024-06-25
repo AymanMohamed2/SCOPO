@@ -29,7 +29,7 @@ class ImageAndInfoSection extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'MORE LIKE THIS',
+          '- MORE LIKE THIS -',
           style: AppStyles.getSemiBold20(context),
         ),
       ],

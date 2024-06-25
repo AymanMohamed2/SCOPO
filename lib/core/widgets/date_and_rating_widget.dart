@@ -5,7 +5,7 @@ import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.
 class DateAndRatingWidget extends StatelessWidget {
   const DateAndRatingWidget({
     super.key,
-     this.color,
+    this.color,
     required this.movie,
   });
 
@@ -34,7 +34,7 @@ class DateAndRatingWidget extends StatelessWidget {
           color: AppColors.yellowColor,
           size: 15,
         ),
-        Text(movie.voteAverage.toString()),
+        Text(movie.voteAverage.toString().substring(0, 3)),
       ],
     );
   }

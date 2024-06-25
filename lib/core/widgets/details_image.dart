@@ -27,6 +27,12 @@ class DetailsImage extends StatelessWidget {
                   ),
                 );
               },
+              errorWidget: (context, url, data) {
+                return const MovieAspectRatio(
+                  aspectRatio: 3 / 2,
+                  child: Icon(Icons.image),
+                );
+              },
             )),
         Positioned(
             top: 20,

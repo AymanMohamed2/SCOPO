@@ -8,7 +8,7 @@ class GetPopularTvUsecase {
   final TvRepository tvRepository;
 
   GetPopularTvUsecase(this.tvRepository);
-  Future<Either<Failure, List<TvEntity>>> execute() {
-    return tvRepository.getPopularTv();
+  Future<Either<Failure, List<TvEntity>>> execute({int pageNumber = 1}) {
+    return tvRepository.getPopularTv(pageNumber: pageNumber);
   }
 }

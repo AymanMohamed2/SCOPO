@@ -1,6 +1,6 @@
 class TvEntity {
   final String title;
-  final String image;
+  final String? image;
   final String description;
   final String releaseDate;
   final double rating;

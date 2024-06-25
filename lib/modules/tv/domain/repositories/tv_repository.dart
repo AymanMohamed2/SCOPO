@@ -5,6 +5,6 @@ import '../../../../core/errors/faliure.dart';
 
 abstract class TvRepository {
   Future<Either<Failure, List<TvEntity>>> getOnTheAirTv();
-  Future<Either<Failure, List<TvEntity>>> getPopularTv();
-  Future<Either<Failure, List<TvEntity>> >getTopRatedTv();
+  Future<Either<Failure, List<TvEntity>>> getPopularTv({int pageNumber = 1});
+  Future<Either<Failure, List<TvEntity>>> getTopRatedTv({int pageNumber = 1});
 }

@@ -16,7 +16,7 @@ class DetailsViewBody extends StatelessWidget {
         ),
         const SliverToBoxAdapter(
           child: SizedBox(
-            height: 10,
+            height: 18,
           ),
         ),
         MoreLikeThisBlocBuilder(movie: movie)

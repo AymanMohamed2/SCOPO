@@ -9,7 +9,7 @@ class GetTopRatedTvUsercase {
 
   GetTopRatedTvUsercase(this.repository);
 
-  Future<Either<Failure, List<TvEntity>>> execute() {
-    return repository.getTopRatedTv();
+  Future<Either<Failure, List<TvEntity>>> execute({int pageNumber = 1}) {
+    return repository.getTopRatedTv(pageNumber: pageNumber);
   }
 }

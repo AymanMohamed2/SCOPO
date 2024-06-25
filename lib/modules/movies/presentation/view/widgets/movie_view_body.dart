@@ -29,12 +29,7 @@ class MovieViewBody extends StatelessWidget {
         SliverToBoxAdapter(child: TopRatedSection()),
         SliverToBoxAdapter(
           child: SizedBox(
-            height: 10,
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 10,
+            height: 15,
           ),
         ),
       ],

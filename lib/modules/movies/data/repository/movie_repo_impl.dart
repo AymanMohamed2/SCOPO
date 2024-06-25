@@ -6,7 +6,7 @@ import '../../../../core/helper/get_failure.dart';
 import '../../domain/repository/base_movie_repository.dart';
 
 class MovieRepoImpl extends BaseMoviesRepository {
-  final RemoteDataSource remoteDataSource;
+  final MovieRemoteDataSource remoteDataSource;
 
   MovieRepoImpl(this.remoteDataSource);
 
@@ -40,6 +40,19 @@ class MovieRepoImpl extends BaseMoviesRepository {
     try {
       final result =
           await remoteDataSource.getTopRatedMovies(pageNumber: pageNumber);
+      return right(result);
+    } on Exception catch (e) {
+      return left(getFailure(e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<MoviesEntity>>> getMoreLikeThis(
+    String movieName,
+  ) async {
+    try {
+      final result =
+          await remoteDataSource.getMoreLikeThis(movieName: movieName);
       return right(result);
     } on Exception catch (e) {
       return left(getFailure(e));

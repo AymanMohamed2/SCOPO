@@ -19,7 +19,7 @@ class SeeMoreItem extends StatelessWidget {
         Navigator.pushNamed(context, DetailsView.routeName, arguments: movie);
       },
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+        margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
         decoration: BoxDecoration(
             color: AppColors.lightBlack,
             borderRadius: BorderRadius.circular(8)),
@@ -27,7 +27,7 @@ class SeeMoreItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-                flex: 1,
+                flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: MovieImageItem(
@@ -38,7 +38,7 @@ class SeeMoreItem extends StatelessWidget {
               width: 10,
             ),
             Expanded(
-                flex: 3,
+                flex: 5,
                 child: SeeMoreItemInfo(
                   movie: movie,
                 )),

@@ -21,7 +21,7 @@ class SeeMoreItemInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            height: 20,
+            height: 18,
           ),
           Text(
             movie.title,
