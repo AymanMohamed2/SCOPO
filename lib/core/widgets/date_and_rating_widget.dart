@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/theme/app_colors.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 
 class DateAndRatingWidget extends StatelessWidget {
   const DateAndRatingWidget({
     super.key,
     this.color,
-    required this.movie,
+    required this.baseMovieEntity,
   });
 
   final Color? color;
-  final MoviesEntity movie;
+  final BaseMovieEntity baseMovieEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,9 @@ class DateAndRatingWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(3),
             color: color ?? AppColors.redColor,
           ),
-          child: Text(
-            movie.date.substring(0, 4),
-          ),
+          child: Text(baseMovieEntity.date.length < 4
+              ? "Not Available"
+              : baseMovieEntity.date.substring(0, 4)),
         ),
         const SizedBox(
           width: 10,
@@ -34,7 +34,7 @@ class DateAndRatingWidget extends StatelessWidget {
           color: AppColors.yellowColor,
           size: 15,
         ),
-        Text(movie.voteAverage.toString().substring(0, 3)),
+        Text(baseMovieEntity.voteAverage.toString().substring(0, 3)),
       ],
     );
   }

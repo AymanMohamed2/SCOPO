@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/widgets/movie_image_item.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
-import 'package:task_2/modules/movies/presentation/view/details_view.dart';
+import 'package:task_2/modules/movies/presentation/view/movie_details_view.dart';
 
 class CustomDetailsSliverGrid extends StatelessWidget {
   const CustomDetailsSliverGrid({
@@ -9,7 +9,7 @@ class CustomDetailsSliverGrid extends StatelessWidget {
     required this.movies,
   });
 
-  final List<MoviesEntity> movies;
+  final List<BaseMovieEntity> movies;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,8 @@ class CustomDetailsSliverGrid extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
               onTap: () {
-                Navigator.pushReplacementNamed(context, DetailsView.routeName,
+                Navigator.pushReplacementNamed(
+                    context, MovieDetailsView.routeName,
                     arguments: movies[index]);
               },
               child: MovieImageItem(image: movies[index].image));

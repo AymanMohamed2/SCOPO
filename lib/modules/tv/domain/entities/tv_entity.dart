@@ -1,14 +1,10 @@
-class TvEntity {
-  final String title;
-  final String? image;
-  final String description;
-  final String releaseDate;
-  final double rating;
+import 'package:task_2/core/entities/base_movie_entity.dart';
 
+class TvEntity extends BaseMovieEntity {
   TvEntity(
-      {required this.title,
-      required this.image,
-      required this.description,
-      required this.releaseDate,
-      required this.rating});
+      {required super.image,
+      required super.title,
+      required super.overview,
+      required super.voteAverage,
+      required super.date});
 }

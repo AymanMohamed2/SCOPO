@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/utils/styles.dart';
 import 'package:task_2/core/widgets/date_and_rating_widget.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 
 class SeeMoreItemInfo extends StatelessWidget {
   const SeeMoreItemInfo({
     super.key,
-    required this.movie,
+    required this.baseMovieEntity,
     this.descreptionMaxLines,
   });
-  final MoviesEntity movie;
+  final BaseMovieEntity baseMovieEntity;
 
   final int? descreptionMaxLines;
   @override
@@ -24,7 +24,7 @@ class SeeMoreItemInfo extends StatelessWidget {
             height: 18,
           ),
           Text(
-            movie.title,
+            baseMovieEntity.title,
             style: AppStyles.getBold20(context),
             overflow: TextOverflow.ellipsis,
             maxLines: 1,
@@ -32,12 +32,12 @@ class SeeMoreItemInfo extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          DateAndRatingWidget(movie: movie),
+          DateAndRatingWidget(baseMovieEntity: baseMovieEntity),
           const SizedBox(
             height: 10,
           ),
           Text(
-            movie.overview,
+            baseMovieEntity.overview,
             maxLines: descreptionMaxLines ?? 2,
             overflow: TextOverflow.ellipsis,
           ),

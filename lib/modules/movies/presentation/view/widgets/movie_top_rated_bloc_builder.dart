@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_2/core/widgets/custom_err_widget.dart';
-import 'package:task_2/modules/movies/presentation/view/widgets/top_rated_list_view.dart';
+import 'package:task_2/core/widgets/custom_home_list_view.dart';
 import 'package:task_2/core/widgets/movie_list_loading.dart';
 import 'package:task_2/modules/movies/presentation/view_model/get_top_rated_cubit/get_top_rated_cubit.dart';
 
@@ -21,7 +21,14 @@ class _TopRatedBlocBuilderState extends State<TopRatedBlocBuilder> {
       if (state is GetTopRatedSuccess ||
           state is GetTopRatedPaginationFailure ||
           state is GetTopRatedPaginationLoading) {
-        return TopRatedListView(moviesEntity: cubit.movies);
+        return CustomHomeListView(
+            onPaginationScroll: () async {
+              await BlocProvider.of<GetTopRatedCubit>(context)
+                  .getTopRatedMovies(
+                      pageNumber: ++BlocProvider.of<GetTopRatedCubit>(context)
+                          .nextPage);
+            },
+            baseMovieEntity: cubit.movies);
       } else if (state is GetTopRatedFailure) {
         return CustomErrorWidget(errMessage: state.errMessage);
       } else {

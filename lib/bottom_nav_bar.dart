@@ -3,17 +3,16 @@ import 'package:task_2/core/theme/app_colors.dart';
 import 'package:task_2/modules/movies/presentation/view/movie_view.dart';
 import 'package:task_2/modules/tv/presentation/view/tv_view.dart';
 
-class BottomNavigationBarExample extends StatefulWidget {
+class CustomBottomNavigationBar extends StatefulWidget {
   static const routeName = 'bottom_nav_bar';
-  const BottomNavigationBarExample({super.key});
+  const CustomBottomNavigationBar({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() =>
-      _BottomNavigationBarExampleState();
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
 }
 
-class _BottomNavigationBarExampleState
-    extends State<BottomNavigationBarExample> {
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[MovieView(), TvView()];

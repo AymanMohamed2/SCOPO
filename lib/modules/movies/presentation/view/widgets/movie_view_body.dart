@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_2/modules/movies/presentation/view/widgets/now_playing_bloc_builder.dart';
 import 'package:task_2/modules/movies/presentation/view/widgets/popular_section.dart';
-import 'package:task_2/modules/movies/presentation/view/widgets/top_rated_section.dart';
+import 'package:task_2/modules/movies/presentation/view/widgets/movie_top_rated_section.dart';
 
 class MovieViewBody extends StatelessWidget {
   const MovieViewBody({super.key});

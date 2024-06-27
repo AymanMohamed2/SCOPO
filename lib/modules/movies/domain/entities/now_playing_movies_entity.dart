@@ -1,14 +1,10 @@
-class MoviesEntity {
-  final String? image;
-  final String title;
-  final String overview;
-  final double voteAverage;
-  final String date;
+import 'package:task_2/core/entities/base_movie_entity.dart';
 
+class MoviesEntity extends BaseMovieEntity {
   MoviesEntity(
-      {required this.image,
-      required this.title,
-      required this.overview,
-      required this.date,
-      required this.voteAverage});
+      {required super.image,
+      required super.title,
+      required super.overview,
+      required super.voteAverage,
+      required super.date});
 }

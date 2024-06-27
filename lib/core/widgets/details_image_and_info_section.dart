@@ -1,36 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/utils/styles.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/widgets/custom_details_info.dart';
 import 'package:task_2/core/widgets/details_image.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 
-class ImageAndInfoSection extends StatelessWidget {
-  const ImageAndInfoSection({
+class DetailsImageAndInfoSection extends StatelessWidget {
+  const DetailsImageAndInfoSection({
     super.key,
-    required this.movie,
+    required this.baseMovieEntity,
   });
 
-  final MoviesEntity movie;
+  final BaseMovieEntity baseMovieEntity;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         DetailsImage(
-          image: movie.image ?? '',
+          image: baseMovieEntity.image ?? '',
         ),
         const SizedBox(
           height: 10,
         ),
         CustomDetailsInfo(
-          movie: movie,
+          baseMovieEntity: baseMovieEntity,
         ),
         const SizedBox(
           height: 20,
-        ),
-        Text(
-          '- MORE LIKE THIS -',
-          style: AppStyles.getSemiBold20(context),
         ),
       ],
     );

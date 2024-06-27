@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/theme/app_colors.dart';
 import 'package:task_2/core/utils/styles.dart';
 import 'package:task_2/core/widgets/date_and_rating_widget.dart';
-import 'package:task_2/modules/movies/domain/entities/now_playing_movies_entity.dart';
 
 class CustomDetailsInfo extends StatelessWidget {
-  const CustomDetailsInfo({super.key, required this.movie});
-  final MoviesEntity movie;
+  const CustomDetailsInfo({super.key, required this.baseMovieEntity});
+  final BaseMovieEntity baseMovieEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomDetailsInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            movie.title,
+            baseMovieEntity.title,
             style: AppStyles.getBold30(context),
             maxLines: 1,
           ),
@@ -24,13 +24,13 @@ class CustomDetailsInfo extends StatelessWidget {
             height: 10,
           ),
           DateAndRatingWidget(
-            movie: movie,
+            baseMovieEntity: baseMovieEntity,
             color: AppColors.lightBlack,
           ),
           const SizedBox(
             height: 20,
           ),
-          Text(movie.overview),
+          Text(baseMovieEntity.overview),
         ],
       ),
     );

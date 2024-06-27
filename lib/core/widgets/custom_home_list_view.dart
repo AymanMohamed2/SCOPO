@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_2/core/entities/base_movie_entity.dart';
 import 'package:task_2/core/widgets/movie_image_item.dart';
-import 'package:task_2/modules/tv/domain/entities/tv_entity.dart';
-import 'package:task_2/modules/tv/presentation/view_model/get_tv_popular_cubit/get_tv_popular_cubit_cubit.dart';
+import 'package:task_2/modules/movies/presentation/view/movie_details_view.dart';
 
-class TvPopularListView extends StatefulWidget {
-  const TvPopularListView({
+class CustomHomeListView extends StatefulWidget {
+  const CustomHomeListView({
     super.key,
-    required this.tvs,
+    required this.baseMovieEntity,
+    required this.onPaginationScroll,
+    this.onTap,
   });
-  final List<TvEntity> tvs;
+  final List<BaseMovieEntity> baseMovieEntity;
+
+  final Future<void> Function() onPaginationScroll;
+  final void Function(int)? onTap;
 
   @override
-  State<TvPopularListView> createState() => _TvPopularListViewState();
+  State<CustomHomeListView> createState() => _CustomHomeListViewState();
 }
 
-class _TvPopularListViewState extends State<TvPopularListView> {
+class _CustomHomeListViewState extends State<CustomHomeListView> {
   late final ScrollController _scrollController;
 
   var isLoading = false;
@@ -32,9 +36,7 @@ class _TvPopularListViewState extends State<TvPopularListView> {
     if (currentPositions >= 0.7 * maxScrollLength) {
       if (!isLoading) {
         isLoading = true;
-        await BlocProvider.of<GetTvPopularCubitCubit>(context).getTvPopular(
-            pageNumber:
-                ++BlocProvider.of<GetTvPopularCubitCubit>(context).nextPage);
+        await widget.onPaginationScroll.call();
         isLoading = false;
       }
     }
@@ -53,13 +55,20 @@ class _TvPopularListViewState extends State<TvPopularListView> {
       child: ListView.builder(
         controller: _scrollController,
         scrollDirection: Axis.horizontal,
-        itemCount: widget.tvs.length,
+        itemCount: widget.baseMovieEntity.length,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 5),
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              if (widget.onTap == null) {
+                Navigator.pushNamed(context, MovieDetailsView.routeName,
+                    arguments: widget.baseMovieEntity[index]);
+              } else {
+                widget.onTap!.call(index);
+              }
+            },
             child: MovieImageItem(
-              image: widget.tvs[index].image,
+              image: widget.baseMovieEntity[index].image,
             ),
           ),
         ),

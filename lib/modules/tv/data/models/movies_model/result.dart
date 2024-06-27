@@ -32,11 +32,12 @@ class Result extends TvEntity {
     required this.voteAverage,
     required this.voteCount,
   }) : super(
-            title: name,
-            image: backdropPath,
-            description: overview,
-            releaseDate: firstAirDate,
-            rating: voteAverage);
+          image: backdropPath,
+          title: name,
+          overview: overview,
+          voteAverage: voteAverage,
+          date: firstAirDate,
+        );
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
         adult: json['adult'] as bool,
