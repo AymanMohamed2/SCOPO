@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 import 'package:task_2/core/theme/app_colors.dart';
-import 'package:task_2/core/view_model/git_more_like_this_cubit.dart/get_more_like_this_cubit.dart';
-import 'package:task_2/core/widgets/more_details_view_body.dart';
+import 'package:task_2/core/app/presentation/view_model/git_more_like_this_cubit.dart/get_more_like_this_cubit.dart';
+import 'package:task_2/core/app/presentation/widgets/more_details_view_body.dart';
 
 class MovieDetailsView extends StatefulWidget {
   static const String routeName = '/details_view';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
-import 'package:task_2/core/widgets/see_more_item.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/presentation/widgets/see_more_item.dart';
 
 class SeeMoreListView extends StatefulWidget {
   const SeeMoreListView(

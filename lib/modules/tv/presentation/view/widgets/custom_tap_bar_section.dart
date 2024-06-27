@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
-import 'package:task_2/core/view_model/git_more_like_this_cubit.dart/get_more_like_this_cubit.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/presentation/view_model/git_more_like_this_cubit.dart/get_more_like_this_cubit.dart';
 import 'package:task_2/modules/tv/presentation/view/widgets/custom_page_view.dart';
 import 'package:task_2/modules/tv/presentation/view/widgets/custom_tap_bar.dart';
 

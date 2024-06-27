@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:task_2/core/app/data/datasources/remote_app_data_source.dart';
+import 'package:task_2/core/app/data/repository/app_repository_impl.dart';
 import 'package:task_2/core/networking/dio.dart';
 import 'package:task_2/modules/movies/data/datasources/remote_data_source.dart';
 import 'package:task_2/modules/movies/data/repository/movie_repo_impl.dart';
-import 'package:task_2/modules/movies/domain/usecases/get_more_like_this_use_case.dart';
+import 'package:task_2/core/app/domain/usecases/get_more_like_this_use_case.dart';
 import 'package:task_2/modules/movies/domain/usecases/now_playing_movies_usecase.dart';
 import 'package:task_2/modules/movies/domain/usecases/popular_movies_usecase.dart';
 import 'package:task_2/modules/movies/domain/usecases/top_rated_movies_usecase.dart';
@@ -31,8 +33,12 @@ abstract class ServiceLocator {
         PopularMoviesUseCase(getIt.get<MovieRepoImpl>()));
     getIt.registerSingleton<TopRatedMoviesUseCase>(
         TopRatedMoviesUseCase(getIt.get<MovieRepoImpl>()));
+    getIt.registerSingleton<RemoteAppDataSource>(
+        RemoteAppDataSource(getIt.get<DioService>()));
+    getIt.registerSingleton<AppRepositoryImpl>(
+        AppRepositoryImpl(getIt.get<RemoteAppDataSource>()));
     getIt.registerSingleton<GetMoreLikeThisUseCase>(
-        GetMoreLikeThisUseCase(getIt.get<MovieRepoImpl>()));
+        GetMoreLikeThisUseCase(getIt.get<AppRepositoryImpl>()));
     getIt.registerSingleton<TvRemoteDataSource>(
         TvRemoteDataSource(getIt.get<DioService>()));
 

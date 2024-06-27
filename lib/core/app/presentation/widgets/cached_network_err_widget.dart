@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_2/core/theme/app_colors.dart';
-import 'package:task_2/core/widgets/movie_aspect_ratio.dart';
+import 'package:task_2/core/app/presentation/widgets/movie_aspect_ratio.dart';
 
 class CachedNetworkErrorWidget extends StatelessWidget {
   const CachedNetworkErrorWidget({

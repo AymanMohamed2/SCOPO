@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_2/core/widgets/custom_err_widget.dart';
-import 'package:task_2/core/widgets/custom_home_list_view.dart';
-import 'package:task_2/core/widgets/movie_list_loading.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_err_widget.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_home_list_view.dart';
+import 'package:task_2/core/app/presentation/widgets/movie_list_loading.dart';
 import 'package:task_2/modules/tv/presentation/view/tv_details_view.dart';
 import 'package:task_2/modules/tv/presentation/view_model/get_tv_popular_cubit/get_tv_popular_cubit_cubit.dart';
 

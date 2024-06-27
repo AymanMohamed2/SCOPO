@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
-import 'package:task_2/core/widgets/movie_image_item.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/presentation/widgets/movie_image_item.dart';
 import 'package:task_2/modules/movies/presentation/view/movie_details_view.dart';
 
 class CustomDetailsSliverGrid extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task_2/core/networking/api_constance.dart';
-import 'package:task_2/core/widgets/cached_network_err_widget.dart';
-import 'package:task_2/core/widgets/custom_fading_widget.dart';
-import 'package:task_2/core/widgets/movie_aspect_ratio.dart';
+import 'package:task_2/core/app/presentation/widgets/cached_network_err_widget.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_fading_widget.dart';
+import 'package:task_2/core/app/presentation/widgets/movie_aspect_ratio.dart';
 
 class MovieImageItem extends StatelessWidget {
   const MovieImageItem({

@@ -1,11 +1,12 @@
 import 'package:task_2/core/networking/api_service.dart';
 import 'package:task_2/core/networking/end_points.dart';
 import 'package:task_2/core/networking/queries.dart';
+import 'package:task_2/modules/movies/data/datasources/base_data_source.dart';
 
 import '../../domain/entities/now_playing_movies_entity.dart';
 import '../models/movies_model/movies_model.dart';
 
-class MovieRemoteDataSource {
+class MovieRemoteDataSource extends BaseMovieDataSource {
   final ApiService apiService;
 
   MovieRemoteDataSource(this.apiService);

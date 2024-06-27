@@ -1,4 +1,4 @@
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 
 class MoviesEntity extends BaseMovieEntity {
   MoviesEntity(

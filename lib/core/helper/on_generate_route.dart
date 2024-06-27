@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_2/bottom_nav_bar.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 import 'package:task_2/core/helper/see_more_arguments.dart';
 import 'package:task_2/modules/movies/presentation/view/movie_details_view.dart';
 import 'package:task_2/modules/movies/presentation/view/movie_view.dart';

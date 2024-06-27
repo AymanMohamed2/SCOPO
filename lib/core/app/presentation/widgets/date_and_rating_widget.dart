@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 import 'package:task_2/core/theme/app_colors.dart';
 
 class DateAndRatingWidget extends StatelessWidget {

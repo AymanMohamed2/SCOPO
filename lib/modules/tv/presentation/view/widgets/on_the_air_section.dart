@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/widgets/custom_now_playing_info.dart';
-import 'package:task_2/core/widgets/custom_shadow.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_now_playing_info.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_shadow.dart';
 import 'package:task_2/modules/movies/presentation/view/widgets/now_playing_image.dart';
 import 'package:task_2/modules/tv/domain/entities/tv_entity.dart';
 

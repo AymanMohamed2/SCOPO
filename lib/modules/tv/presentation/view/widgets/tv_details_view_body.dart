@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
-import 'package:task_2/core/widgets/details_image_and_info_section.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/presentation/widgets/details_image_and_info_section.dart';
 import 'package:task_2/modules/tv/presentation/view/widgets/custom_tap_bar_section.dart';
 
 class TvDetailsViewBody extends StatelessWidget {

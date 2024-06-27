@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
-import 'package:task_2/core/widgets/custom_details_info.dart';
-import 'package:task_2/core/widgets/details_image.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/presentation/widgets/custom_details_info.dart';
+import 'package:task_2/core/app/presentation/widgets/details_image.dart';
 
 class DetailsImageAndInfoSection extends StatelessWidget {
   const DetailsImageAndInfoSection({

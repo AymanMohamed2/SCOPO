@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 import 'package:task_2/core/utils/styles.dart';
-import 'package:task_2/core/widgets/details_image_and_info_section.dart';
-import 'package:task_2/core/widgets/more_like_this_details_bloc_builder.dart';
+import 'package:task_2/core/app/presentation/widgets/details_image_and_info_section.dart';
+import 'package:task_2/core/app/presentation/widgets/more_like_this_details_bloc_builder.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({super.key, required this.baseMovieEntity});

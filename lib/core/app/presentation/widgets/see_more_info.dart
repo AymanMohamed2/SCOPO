@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_2/core/entities/base_movie_entity.dart';
+import 'package:task_2/core/app/domain/entities/base_movie_entity.dart';
 import 'package:task_2/core/utils/styles.dart';
-import 'package:task_2/core/widgets/date_and_rating_widget.dart';
+import 'package:task_2/core/app/presentation/widgets/date_and_rating_widget.dart';
 
 class SeeMoreItemInfo extends StatelessWidget {
   const SeeMoreItemInfo({

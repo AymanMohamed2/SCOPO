@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:task_2/core/networking/api_constance.dart';
-import 'package:task_2/core/widgets/fading_loading_image.dart';
+import 'package:task_2/core/app/presentation/widgets/fading_loading_image.dart';
 
 class CustomNowPlayingImage extends StatelessWidget {
   const CustomNowPlayingImage({super.key, this.image});
