@@ -11,7 +11,7 @@ class TabBarItem extends StatelessWidget {
     return Column(
       children: [
         AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 250),
           color: isActive ? Colors.red : AppColors.darkPurple,
           height: 4,
           width: isActive ? MediaQuery.of(context).size.width / 2 : 0,

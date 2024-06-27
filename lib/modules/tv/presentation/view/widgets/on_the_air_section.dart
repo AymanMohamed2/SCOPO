@@ -15,7 +15,7 @@ class OnTheAirSection extends StatelessWidget {
       ),
       frontChild: NowPlayingInfo(
         movieName: tv.title,
-        title: 'On The Air',
+        title: 'ON THE AIR',
       ),
     );
   }

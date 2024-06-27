@@ -9,7 +9,7 @@ class NowPlayingInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(bottom: 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -22,12 +22,15 @@ class NowPlayingInfo extends StatelessWidget {
                 decoration: const BoxDecoration(
                     color: AppColors.redColor, shape: BoxShape.circle),
               ),
-              const SizedBox(width: 5),
-              Text(title ?? 'Now Playing'),
+              const SizedBox(width: 10),
+              Text(title ?? 'NOW PLAYING'),
             ],
           ),
-          const SizedBox(height: 7),
-          Text(movieName)
+          const SizedBox(height: 10),
+          Text(
+            movieName,
+            style: TextStyle(fontSize: 20),
+          )
         ],
       ),
     );

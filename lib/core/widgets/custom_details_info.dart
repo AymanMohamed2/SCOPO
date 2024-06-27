@@ -25,12 +25,14 @@ class CustomDetailsInfo extends StatelessWidget {
           ),
           DateAndRatingWidget(
             baseMovieEntity: baseMovieEntity,
-            color: AppColors.lightBlack,
+            color: AppColors.lightGrey,
           ),
           const SizedBox(
             height: 20,
           ),
-          Text(baseMovieEntity.overview),
+          Text(
+            baseMovieEntity.overview,
+          ),
         ],
       ),
     );

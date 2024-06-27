@@ -9,4 +9,6 @@ abstract class AppColors {
   static const Color transparent = Colors.transparent;
   static const Color redColor = Colors.red;
   static const Color darkPurple = Color(0xff1E1E29);
+  static const Color lightGrey = Color.fromARGB(255, 78, 78, 78);
+  static const Color grey = Color.fromARGB(255, 98, 97, 97);
 }

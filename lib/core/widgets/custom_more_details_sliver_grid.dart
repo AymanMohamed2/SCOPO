@@ -13,21 +13,24 @@ class CustomDetailsSliverGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverGrid.builder(
-        itemCount: movies.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 5,
-            childAspectRatio: 2.8 / 4),
-        itemBuilder: (context, index) {
-          return GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(
-                    context, MovieDetailsView.routeName,
-                    arguments: movies[index]);
-              },
-              child: MovieImageItem(image: movies[index].image));
-        });
+    return SliverPadding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      sliver: SliverGrid.builder(
+          itemCount: movies.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
+              childAspectRatio: 2.8 / 4),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacementNamed(
+                      context, MovieDetailsView.routeName,
+                      arguments: movies[index]);
+                },
+                child: MovieImageItem(image: movies[index].image));
+          }),
+    );
   }
 }
