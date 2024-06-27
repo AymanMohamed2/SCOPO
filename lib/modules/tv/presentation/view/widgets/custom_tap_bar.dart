@@ -9,6 +9,7 @@ class CustomTapBar extends StatelessWidget {
   });
   final int currentPage;
   final PageController pageController;
+  static List<String> tabBaritems = ['EPISODES', 'MORE LIKE THIS'];
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class CustomTapBar extends StatelessWidget {
             },
             child: TabBarItem(
               isActive: index == currentPage,
-              title: 'EPISODES',
+              title: tabBaritems[index],
             ),
           );
         }));

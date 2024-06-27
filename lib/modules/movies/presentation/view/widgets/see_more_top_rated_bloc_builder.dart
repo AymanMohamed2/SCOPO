@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_2/core/widgets/custom_err_widget.dart';
 import 'package:task_2/core/widgets/see_more_list_view.dart';
 import 'package:task_2/core/widgets/see_more_loading_list_view.dart';
+import 'package:task_2/modules/movies/presentation/view/movie_details_view.dart';
 import 'package:task_2/modules/movies/presentation/view_model/get_top_rated_cubit/get_top_rated_cubit.dart';
 
 class SeeMoreTopRatedBlocBuilder extends StatelessWidget {
@@ -10,18 +11,21 @@ class SeeMoreTopRatedBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = BlocProvider.of<GetTopRatedCubit>(context);
     return BlocBuilder<GetTopRatedCubit, GetTopRatedState>(
         builder: (context, state) {
       if (state is GetTopRatedSuccess ||
           state is GetTopRatedPaginationFailure ||
           state is GetTopRatedPaginationLoading) {
         return SeeMoreListView(
-          onPaginationScroll: () async {
-            BlocProvider.of<GetTopRatedCubit>(context).getTopRatedMovies(
-                pageNumber:
-                    ++BlocProvider.of<GetTopRatedCubit>(context).nextPage);
+          onTap: (value) {
+            Navigator.pushNamed(context, MovieDetailsView.routeName,
+                arguments: cubit.movies[value]);
           },
-          baseMovieEntity: BlocProvider.of<GetTopRatedCubit>(context).movies,
+          onPaginationScroll: () async {
+            cubit.getTopRatedMovies(pageNumber: ++cubit.nextPage);
+          },
+          baseMovieEntity: cubit.movies,
         );
       } else if (state is GetTopRatedFailure) {
         return CustomErrorWidget(errMessage: state.errMessage);

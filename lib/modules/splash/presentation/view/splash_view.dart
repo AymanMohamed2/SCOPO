@@ -29,7 +29,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(milliseconds: 3170), () {
+    Future.delayed(const Duration(milliseconds: 2750), () {
       Navigator.pushReplacementNamed(
           context, CustomBottomNavigationBar.routeName);
     });
