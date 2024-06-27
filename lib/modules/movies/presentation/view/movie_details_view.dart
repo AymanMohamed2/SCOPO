@@ -26,11 +26,8 @@ class _MovieDetailsViewState extends State<MovieDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.darkPurple,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: DetailsViewBody(
-          baseMovieEntity: widget.baseMovieEntity,
-        ),
+      body: DetailsViewBody(
+        baseMovieEntity: widget.baseMovieEntity,
       ),
     );
   }
